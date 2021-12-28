@@ -45,26 +45,6 @@
         </div>
     </div>
 </div>
-<script>
-    let textarea=document.getElementById("edit-acercade");
-    textarea.addEventListener('keyup', (e) => {
-        logMessage(`Key "${e.key}" released  [event: keyup]`);
-        if (e.key=="Enter"){
-            ducument.getElementById("edit-acercade").style.display="none"
-        }
-    });
-    
-    
-    function cambiar_parrafo(){
-        document.getElementById("edit-acercade").style.display="block";
-        let texto = getElementById("edit-acercade").innerText;
-        console.log(texto);
-    };
-    function myfunction2(valor){
-        document.getElementById("text-acercade").innerText=valor;
-    };
-
-</script>
 
 <div class="card-mat-card">
     <div class="card-titles">
@@ -79,9 +59,32 @@
         <p id="texto-acercade">Un tipo x que no se que macri gato</p>
     </div>
     <div>
-        <input id="edit-acercade" type="text" oninput="myfunction2(this.value)";>
+        <input id="edit-acercade" type="text" oninput="myfunction2(this.value)">
     </div>
 </div>
+
+<script>
+    function cambiar_parrafo(){
+        document.getElementById("edit-acercade").style.display="block";
+        let texto = getElementById("edit-acercade").innerText;
+        console.log(texto);
+    };
+    function myfunction2(valor){
+        document.getElementById("text-acercade").innerText=valor;
+    };
+    function logMessage(message){
+        console.log(message + "<br>");
+    }
+    
+    let textarea=document.getElementById("edit-acercade");
+    textarea.addEventListener('keyup', (e) => {
+        logMessage(`Key "${e.key}" released  [event: keyup]`);
+        if (e.key=="Enter"){
+            ducument.getElementById("edit-acercade").style.display="none"
+        }
+    });
+</script>
+
 </body>
 
 
